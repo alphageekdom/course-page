@@ -1,5 +1,5 @@
 @import '_reset';
-@import url('https://fonts.googleapis.come/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -22,6 +22,7 @@ section .container {
 
 .highlight {
   color: #ff5500;
+  font-weight: bolder;
 }
 
 .copyright {
@@ -169,6 +170,7 @@ section .container {
   color: white;
   margin: 0 auto 16px;
   transition: all 0.3s ease-in-out;
+  font-size: 2rem;
 
   &:hover {
     color: #333;
@@ -207,7 +209,7 @@ section .container {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba($color: #00507881, $alpha: 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: -1;
   }
 }
@@ -319,6 +321,7 @@ section .container {
   justify-content: center;
   align-items: center;
   background-color: #fff;
+
   &__container {
     width: 100%;
     height: 100vh;
@@ -339,6 +342,13 @@ section .container {
     text-align: center;
     margin: 2rem;
     position: relative;
+
+    &-image {
+      img {
+        object-fit: cover;
+        object-position: center;
+      }
+    }
   }
   &__card:nth-child(even) {
     background-color: #ff5500;
