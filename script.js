@@ -1,5 +1,4 @@
 const nav = document.querySelector('.navbar');
-
 const menu_btn = document.querySelector('.nav-hamburger');
 const mobile_menu = document.querySelector('.mobile-nav');
 
@@ -9,6 +8,12 @@ menu_btn.addEventListener('click', () => {
 });
 
 window.addEventListener('scroll', fixNav);
+window.addEventListener('resize', closeMobile);
+
+function handleScrollAndResize() {
+  fixNav();
+  closeMobile();
+}
 
 function fixNav() {
   if (window.scrollY > nav.offsetHeight + 50) {
@@ -18,11 +23,9 @@ function fixNav() {
   }
 }
 
-window.addEventListener('resize', closeMobile);
-
 function closeMobile() {
-  var w = window.outerWidth;
-  if (w > 820) {
+  const windowWidth = window.outerWidth;
+  if (windowWidth > 820) {
     menu_btn.classList.remove('is-active');
     mobile_menu.classList.remove('is-active');
   }
