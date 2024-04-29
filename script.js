@@ -30,3 +30,23 @@ function closeMobile() {
     mobile_menu.classList.remove('is-active');
   }
 }
+
+function toggleMenu() {
+  var navbar = document.querySelector('.navbar');
+  navbar.classList.toggle('menu-open');
+}
+
+document.querySelectorAll('.mobile-nav a').forEach(function (link) {
+  link.addEventListener('click', function (event) {
+    menu_btn.classList.remove('is-active');
+    mobile_menu.classList.remove('is-active');
+
+    // Smooth scroll to the target section
+    const targetId = this.getAttribute('href');
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      event.preventDefault();
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});

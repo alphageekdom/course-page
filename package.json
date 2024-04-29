@@ -1,5 +1,11 @@
 {
   "dependencies": {
     "sass": "^1.69.7"
+  },
+  "scripts": {
+    "build": "npm run build:css && npm run build:html && npm run build:js",
+    "build:css": "node-sass src/styles/main.scss -o dist/css --output-style compressed",
+    "build:html": "cp src/index.html dist/index.html",
+    "build:js": "cp src/scripts/script.js dist/js/script.js"
   }
 }
