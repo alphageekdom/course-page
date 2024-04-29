@@ -259,6 +259,7 @@ section .container {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #d3d3d3;
 
   &__container {
     width: 100%;
@@ -267,7 +268,6 @@ section .container {
     flex-direction: row;
     justify-content: center;
     gap: 3rem;
-    padding-top: 5rem;
   }
   &__image img {
     width: 100%;
@@ -286,7 +286,27 @@ section .container {
     font-size: 0.7rem;
   }
 
+  &__left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #3c3c3c;
+
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    p {
+      padding-bottom: 8px;
+      line-height: 1.5;
+      font-size: 1.2rem;
+    }
+  }
+
   &__right {
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -637,8 +657,6 @@ section .container {
     height: 100%;
   }
   .pricing__container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
     height: 100%;
   }
 
@@ -694,6 +712,7 @@ section .container {
 
   .about__container {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
@@ -734,6 +753,19 @@ section .container {
 @media only screen and (max-width: 500px) {
   #hero {
     margin-top: 70px;
+  }
+  .about {
+    margin-top: 0;
+    &__left,
+    &__right {
+      width: 100%;
+    }
+  }
+  .services {
+    &__left,
+    &__right {
+      width: 100%;
+    }
   }
   .contact {
     h1 {
