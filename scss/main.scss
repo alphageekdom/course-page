@@ -35,6 +35,10 @@ section .container {
   font-size: 1rem;
 }
 
+.bg-light {
+  background-color: white !important;
+}
+
 // Navbar
 .navbar {
   display: flex;
@@ -313,7 +317,6 @@ section .container {
   background-color: #d3d3d3;
   &__container {
     width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -322,6 +325,17 @@ section .container {
   }
 
   &__left {
+    img {
+      border: 10px solid white;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+        rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+    figcaption {
+      text-transform: uppercase;
+      font-weight: 100;
+      letter-spacing: 2px;
+      font-size: 0.7rem;
+    }
     h2 {
       font-size: 3rem;
       margin-bottom: 3rem;
@@ -346,6 +360,16 @@ section .container {
       letter-spacing: 2px;
       font-size: 0.7rem;
     }
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    p {
+      padding-bottom: 8px;
+      line-height: 1.5;
+      font-size: 1.2rem;
+    }
   }
   .highlight {
     font-weight: 600;
@@ -353,21 +377,50 @@ section .container {
 }
 
 // PRICING SECTION
+
 .pricing {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: #d3d3d3;
 
   &__container {
     width: 100%;
-    height: 100vh;
+    gap: 3rem;
+    padding: 3rem;
+  }
+
+  &__section {
     display: flex;
     flex-direction: row;
+  }
+
+  &__left {
+    width: 50%;
+    display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      .highlight {
+        font-weight: normal;
+      }
+    }
+  }
+  &__right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      .highlight {
+        font-weight: normal;
+      }
+    }
   }
   &__card {
     width: 300px;
@@ -388,10 +441,6 @@ section .container {
       }
     }
   }
-  &__card:nth-child(even) {
-    background-color: $highlight-color;
-  }
-
   &__card-text {
     position: absolute;
     background-color: #333;
@@ -402,9 +451,6 @@ section .container {
     padding: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-  }
-  .popular {
-    background-color: $highlight-color;
   }
 
   &__card-stats {
@@ -423,25 +469,33 @@ section .container {
     li {
       padding-bottom: 0.6rem;
     }
-  }
-  button {
-    padding: 16px 42px;
-    box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
-    line-height: 1.25;
-    background: #fff;
-    color: #000;
-    text-decoration: none;
-    font-size: 16px;
-    text-transform: uppercase;
-    position: relative;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    button {
+      padding: 16px 42px;
+      box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+      line-height: 1.25;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      font-size: 16px;
+      text-transform: uppercase;
+      position: relative;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
 
-    &:hover {
-      transform: translateY(-8px);
+      &:hover {
+        transform: translateY(-8px);
+      }
     }
   }
+}
+
+.popular {
+  background-color: purple;
+}
+
+.premium {
+  background-color: $highlight-color;
 }
 
 // CONTACT SECTION
@@ -450,7 +504,7 @@ section .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #d3d3d3;
+  margin-top: 5rem;
 
   &__container {
     width: 100%;
@@ -653,8 +707,23 @@ section .container {
 
   .pricing__container {
     height: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+
+  .pricing__section {
+    display: inline-block;
+  }
+
+  .pricing__right,
+  .pricing__left {
+    width: 100%;
+  }
+
+  .pricing__section.reverse {
+    display: flex !important;
+    flex-direction: column-reverse !important;
   }
 
   .contact__form {
@@ -666,6 +735,15 @@ section .container {
   #hero {
     margin-top: 70px;
   }
+  .contact {
+    h1 {
+      font-size: 2rem;
+    }
+    .input__container label {
+      font-size: 1.3rem;
+    }
+  }
+
   .footer {
     display: flex;
     gap: 2rem;
