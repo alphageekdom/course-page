@@ -260,6 +260,7 @@ section .container {
   justify-content: center;
   align-items: center;
   background-color: #d3d3d3;
+  margin-top: 5rem;
 
   &__container {
     width: 100%;
@@ -710,11 +711,18 @@ section .container {
     display: contents;
   }
 
-  .about__container {
-    height: 100%;
+  .about {
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    &__container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    &__left,
+    &__right {
+      width: 100% !important;
+    }
   }
 
   .services__container {
@@ -755,7 +763,7 @@ section .container {
     margin-top: 70px;
   }
   .about {
-    margin-top: 0;
+    width: 100%;
     &__left,
     &__right {
       width: 100%;
